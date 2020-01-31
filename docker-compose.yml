@@ -1,0 +1,27 @@
+version: "3.7"
+networks:
+  app-tier:
+    driver: bridge
+services:
+  db:
+    container_name: ${NAMESPACE}_db
+    image: 'mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    networks:
+      - app-tier
+  web:
+    tty: true
+    stdin_open: true
+    container_name: ${NAMESPACE}_web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/work
+    working_dir: /work
+    command: "bash src/startup.sh"
+    ports:
+      - 3000:3000
+    networks:
+      - app-tier
