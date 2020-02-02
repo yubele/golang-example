@@ -7,7 +7,7 @@ services:
     container_name: ${NAMESPACE}_db
     image: 'mysql'
     environment:
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: ${DBPASSWD}
     networks:
       - app-tier
   web:
@@ -18,9 +18,9 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/work
+      - ../:/work
     working_dir: /work
-    command: "bash src/startup.sh"
+    command: "bash scripts/docker/startup.sh"
     ports:
       - 3000:3000
     networks:

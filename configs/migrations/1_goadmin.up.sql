@@ -1,29 +1,8 @@
 # ************************************************************
-# Sequel Pro SQL dump
-# Version 4468
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.7.19)
-# Database: godmin
-# Generation Time: 2019-09-12 04:16:47 +0000
+# Migration Up File for goadmin
+#  Removed code related to deletion from the following files:
+#  https://raw.githubusercontent.com/GoAdminGroup/go-admin/master/data/admin.sql
 # ************************************************************
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table goadmin_menu
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `goadmin_menu`;
 
 CREATE TABLE `goadmin_menu` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -59,7 +38,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_operation_log
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_operation_log`;
 
 CREATE TABLE `goadmin_operation_log` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -79,7 +57,6 @@ CREATE TABLE `goadmin_operation_log` (
 # Dump of table goadmin_permissions
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_permissions`;
 
 CREATE TABLE `goadmin_permissions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -108,7 +85,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_role_menu
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_role_menu`;
 
 CREATE TABLE `goadmin_role_menu` (
   `role_id` int(11) unsigned NOT NULL,
@@ -136,7 +112,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_role_permissions
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_role_permissions`;
 
 CREATE TABLE `goadmin_role_permissions` (
   `role_id` int(11) unsigned NOT NULL,
@@ -162,7 +137,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_role_users
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_role_users`;
 
 CREATE TABLE `goadmin_role_users` (
   `role_id` int(11) unsigned NOT NULL,
@@ -187,7 +161,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_roles
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_roles`;
 
 CREATE TABLE `goadmin_roles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -214,7 +187,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_session
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_session`;
 
 CREATE TABLE `goadmin_session` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -230,7 +202,6 @@ CREATE TABLE `goadmin_session` (
 # Dump of table goadmin_user_permissions
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_user_permissions`;
 
 CREATE TABLE `goadmin_user_permissions` (
   `user_id` int(11) unsigned NOT NULL,
@@ -255,7 +226,6 @@ UNLOCK TABLES;
 # Dump of table goadmin_users
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `goadmin_users`;
 
 CREATE TABLE `goadmin_users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -280,12 +250,3 @@ VALUES
 
 /*!40000 ALTER TABLE `goadmin_users` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
