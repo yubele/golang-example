@@ -24,4 +24,4 @@ or
     
 ## Migrate
 
-    $ bash scripts/dev.sh migrate (up|down|)
+    $ bash scripts/dev.sh migrate (up|down|version)
