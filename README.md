@@ -25,3 +25,15 @@ or
 ## Migrate
 
     $ bash scripts/dev.sh migrate (up|down|version)
+    
+## Test
+
+    $ bash scripts/dev.sh test 
+
+or 
+
+    $ bash scripts/dev.sh test ./cmd/cli
+    
+or
+
+    $ bash scripts/dev.sh test ./cmd/cli/migrate_test.go
