@@ -10,6 +10,11 @@ services:
       MYSQL_ROOT_PASSWORD: ${DBPASSWD}
     networks:
       - app-tier
+  redis:
+    container_name: ${NAMESPACE}_redis
+    image: 'redis'
+    networks:
+      - app-tier
   web:
     tty: true
     stdin_open: true
@@ -23,5 +28,18 @@ services:
     command: "bash scripts/docker/startup.sh"
     ports:
       - 3000:3000
+    networks:
+      - app-tier
+  worker:
+    tty: true
+    stdin_open: true
+    container_name: ${NAMESPACE}_worker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/work
+    working_dir: /work
+    command: "bash scripts/docker/worker.sh"
     networks:
       - app-tier

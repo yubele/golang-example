@@ -22,10 +22,18 @@ or
 
     $ bash scripts/dev.sh mysql -e "show tables"
     
+## Redis cli
+
+    $ bash scripts/dev.sh redis-cli
+
 ## Migrate
 
     $ bash scripts/dev.sh migrate (up|down|version)
     
+## Other Command
+
+    $ bash scripts/dev.sh exec worker bash
+
 ## Test
 
     $ bash scripts/dev.sh test 

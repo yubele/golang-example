@@ -8,8 +8,11 @@ case $1 in
   "down")
     $docker_compose $@
     ;;
-  "exec")
+  "cmd")
     $docker_compose exec web bash scripts/docker/cmd.sh ${@:2:($#-1)}
+    ;;
+  "redis-cli")
+    $docker_compose exec redis redis-cli
     ;;
   "mysql")
     case $2 in
@@ -46,6 +49,5 @@ case $1 in
     fi
     ;;
   *)
-    echo "[Error] missing arg. Must be read README.md."
-    exit 1
+    $docker_compose $@
 esac

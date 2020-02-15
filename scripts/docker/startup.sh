@@ -14,4 +14,4 @@ if [ "$(mysql -hdb -uroot -ppassword -Dxposts -e "select 1" >/dev/null 2>&1 ;ech
 fi
 
 # Run the apps.
-GO111MODULE=on go run main.go
+GO111MODULE=on go run cmd/app/main.go
