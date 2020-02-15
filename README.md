@@ -1,4 +1,4 @@
-# xposts.xyz
+# golang-example
 
 # Start the development
 
